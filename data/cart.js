@@ -29,11 +29,11 @@ export function addToCart(productId, quantity) {
 }
 
 export function removeFromCart(productId) {
-  cart = [];
+  let newCart = [];
 
   cart.forEach((cartItem) => {
     if (cartItem.productId !== productId) {
-      cart.push(cartItem);
+      newCart.push(cartItem);
     }
   });
 
