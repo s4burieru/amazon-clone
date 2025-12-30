@@ -16,11 +16,11 @@ class Product {
   }
 
   getStarsUrl() {
-  return `images/ratings/rating-${this.rating.stars * 10}.png`;
+    return `images/ratings/rating-${this.rating.stars * 10}.png`;
   }
 
   getPrice() {
-   return `$${formatCurrency(this.priceCents)}`;
+    return `$${formatCurrency(this.priceCents)}`;
   }
 }
 
@@ -35,8 +35,6 @@ const product1 = new Product({
   priceCents: 1090,
   keywords: ["socks", "sports", "apparel"],
 });
-
-console.log(product1);
 
 export const products = [
   {
@@ -524,5 +522,3 @@ export function getProduct(productId) {
 
   return matchingProduct;
 }
-
-console.log(products);
