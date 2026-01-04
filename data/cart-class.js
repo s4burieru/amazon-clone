@@ -46,7 +46,6 @@ class Cart {
         quantity: quantity,
         deliveryOptionId: "1",
       });
-      
     }
     this.saveToStorage();
   }
