@@ -424,11 +424,8 @@ export const products = [
       stars: 4.5,
       count: 130,
     },
-    priceCents: 1649,
-    keywords: ["bathroom", "washroom", "mirrors", "home"],
-    type: "appliance",
-    instructionsLink: "images/appliance-instructions.png",
-    warrantyLink: "images/appliance-warranty.png",
+    priceCents: 1649, 
+    keywords: ["bathroom", "washroom", "mirrors", "home"]
   },
   {
     id: "a45cfa0a-66d6-4dc7-9475-e2b01595f7d7",
