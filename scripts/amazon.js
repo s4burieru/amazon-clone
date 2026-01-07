@@ -1,11 +1,14 @@
 import { cart, addToCart, calculateCartQuantity } from "../data/cart.js";
-import { products } from "../data/products.js";
+import { products, loadProducts } from "../data/products.js";
 import { formatCurrency } from "./utils/money.js";
 
-let productsHTML = "";
+loadProducts(renderProductsGrid);
 
-products.forEach((product) => {
-  productsHTML += `<div class="product-container">
+function renderProductsGrid() {
+  let productsHTML = "";
+
+  products.forEach((product) => {
+    productsHTML += `<div class="product-container">
           <div class="product-image-container">
             <img class="product-image"
               src="${product.image}">
@@ -57,38 +60,39 @@ products.forEach((product) => {
             Add to Cart
           </button>
         </div>`;
-});
+  });
 
-function getCartQuantity() {
-  const cartQuantity = calculateCartQuantity();
-  document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
-}
+  function getCartQuantity() {
+    const cartQuantity = calculateCartQuantity();
+    document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
+  }
 
-function addToCartAnimation(button) {
-  const productContainer = button.closest(".product-container");
-  if (productContainer) {
-    const addedMsg = productContainer.querySelector(".js-added-to-cart");
-    if (addedMsg) {
-      addedMsg.style.opacity = 1;
-      setTimeout(() => {
-        addedMsg.style.opacity = 0;
-      }, 2000);
+  function addToCartAnimation(button) {
+    const productContainer = button.closest(".product-container");
+    if (productContainer) {
+      const addedMsg = productContainer.querySelector(".js-added-to-cart");
+      if (addedMsg) {
+        addedMsg.style.opacity = 1;
+        setTimeout(() => {
+          addedMsg.style.opacity = 0;
+        }, 2000);
+      }
     }
   }
-}
 
-document.querySelector(".js-products-grid").innerHTML = productsHTML;
+  document.querySelector(".js-products-grid").innerHTML = productsHTML;
 
-document.querySelectorAll(".js-add-to-cart").forEach((button) => {
-  button.addEventListener("click", () => {
-    const productId = button.dataset.productId;
-    const quantity = Number(
-      document.querySelector(`.js-quantity-selector-${productId}`).value
-    );
-    addToCart(productId, quantity);
+  document.querySelectorAll(".js-add-to-cart").forEach((button) => {
+    button.addEventListener("click", () => {
+      const productId = button.dataset.productId;
+      const quantity = Number(
+        document.querySelector(`.js-quantity-selector-${productId}`).value
+      );
+      addToCart(productId, quantity);
 
-    getCartQuantity();
+      getCartQuantity();
 
-    addToCartAnimation(button);
+      addToCartAnimation(button);
+    });
   });
-});
+}
