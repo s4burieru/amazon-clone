@@ -6,8 +6,7 @@ import { loadCart } from "../data/cart.js";
 //import "../data/cart-class.js";
 
 Promise.all([
-  new Promise((resolve) => {
-    loadProductsFetch(),
+  loadProductsFetch(),
   new Promise((resolve) => {
     loadCart(() => {
       resolve();
