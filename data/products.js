@@ -1,4 +1,5 @@
 import { formatCurrency } from "../scripts/utils/money.js";
+import {addToCart} from '../data/cart.js';
 
 export class Product {
   id;
