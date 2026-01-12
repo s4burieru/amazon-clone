@@ -85,7 +85,6 @@ export function renderPaymentSummary() {
         console.log("Unexpected error. Please try again later.");
       }
 
-      window.location.href =
-        "/checkout/order-confirmation.html?orderId=" + order.id;
+      window.location.href = "orders.html";
     });
 }
