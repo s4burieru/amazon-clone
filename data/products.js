@@ -1,5 +1,5 @@
 import { formatCurrency } from "../scripts/utils/money.js";
-import {addToCart} from '../data/cart.js';
+import { addToCart } from "../data/cart.js";
 
 export class Product {
   id;
@@ -7,6 +7,7 @@ export class Product {
   name;
   rating;
   priceCents;
+  keywords;
 
   constructor(productDetails) {
     this.id = productDetails.id;
@@ -14,6 +15,7 @@ export class Product {
     this.name = productDetails.name;
     this.rating = productDetails.rating;
     this.priceCents = productDetails.priceCents;
+    this.keywords = productDetails.keywords;
   }
 
   getStarsUrl() {
