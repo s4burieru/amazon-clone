@@ -1,7 +1,7 @@
 import { getProduct, loadProductsFetch } from "../data/products.js";
 import { orders } from "../data/orders.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
-import formatCurrency from "./utils/money.js";
+import { formatCurrency } from "./utils/money.js";
 import { addToCart } from "../data/cart.js";
 
 async function loadPage() {
@@ -53,7 +53,6 @@ async function loadPage() {
           <div class="product-quantity">
             Quantity: ${productDetails.quantity}
           </div>
-          <button class="buy-again-button button-primary">
           <button class="buy-again-button button-primary js-buy-again"
             data-product-id="${product.id}">
             <img class="buy-again-icon" src="images/icons/buy-again.png">
