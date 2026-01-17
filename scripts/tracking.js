@@ -49,19 +49,19 @@ async function loadPage() {
     </div>
     <img class="product-image" src="${product.image}">
     <div class="progress-labels-container">
-     <div class="progress-label ${
-       percentProgress < 50 ? "current-status" : ""
-     }">
+      <div class="progress-label ${
+        percentProgress < 50 ? "current-status" : ""
+      }">
         Preparing
       </div>
-       <div class="progress-label ${
-         percentProgress >= 50 && percentProgress < 100 ? "current-status" : ""
-       }">
+      <div class="progress-label ${
+        percentProgress >= 50 && percentProgress < 100 ? "current-status" : ""
+      }">
         Shipped
       </div>
-       <div class="progress-label ${
-         percentProgress >= 100 ? "current-status" : ""
-       }">
+      <div class="progress-label ${
+        percentProgress >= 100 ? "current-status" : ""
+      }">
         Delivered
       </div>
     </div>
